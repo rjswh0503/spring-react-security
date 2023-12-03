@@ -2,6 +2,10 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
+
+
+
+
 function App() {
 
   const [data, setData] = useState([]);
@@ -39,6 +43,11 @@ function App() {
 
 //데이터 작성한내용으로 변경하는 함수
 const handleInputChange = (e) => {
+  /*
+    
+
+
+  */ 
   const {name, value} = e.target;
   setNewUser((prevUser) => ({...prevUser, [name] : value}));
 };
@@ -81,6 +90,7 @@ const handleAddUser = async () => {
   */
 
   return (
+    
     <div>
       <h1>User List</h1>
       <table border={1}>
@@ -100,7 +110,9 @@ const handleAddUser = async () => {
           
         ))}
       </table>
+      
 
+      
 
       <h2>새로운 유저 저장</h2>
       <div>
@@ -116,8 +128,10 @@ const handleAddUser = async () => {
           onChange={handleInputChange}/>   
       </div>
       <button onClick={handleAddUser}>유저 저장</button>
-
+      
     </div>
+  
+    
   )
 }
 
