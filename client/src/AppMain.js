@@ -7,10 +7,10 @@ function AppMain() {
     return (
         <Router>
             <div>
-                <Link to="/app">user</Link><br/>
+                <Link to="/add">user</Link><br/>
                 <Link to="/product">product</Link>
                 <Routes>
-                    <Route path='/app' element={<App/>}/>
+                    <Route path='/add' element={<App/>}/>
                 </Routes>
                 <Routes>
                     <Route path='/product' element={<Product/>}/>
