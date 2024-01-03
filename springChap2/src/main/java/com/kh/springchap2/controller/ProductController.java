@@ -53,19 +53,18 @@ public class ProductController {
 	}
 	
 	@PutMapping("/update/{id}")
-	public ResponseEntity<Product> updateProduct(@PathVariable Long id, @RequestBody Product updateProduct) {
+	public ResponseEntity<Product> updateProduct(@PathVariable Long id,
+					@RequestBody Product updatedProduct){
 		Product existProduct = productRepository.findById(id)
 				.orElseThrow(() -> new RuntimeException("아이디를 찾을 수 없음" + id));
-		existProduct.setName(updateProduct.getName());
-		existProduct.setPrice(updateProduct.getPrice());
-		
+		existProduct.setName(updatedProduct.getName());
+		existProduct.setPrice(updatedProduct.getPrice());
 		
 		Product updateProduct = productRepository.save(existProduct);
 		return ResponseEntity.ok(updateProduct);
-	}
 	
 
-	
+	}
 	
 	
 
