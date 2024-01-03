@@ -14,5 +14,8 @@ public interface ProductMapper {
 	//JPA처럼 mapper.xml 파일에는 작성하지 않은 sql문과 id에 관련된 메서드를 모두 작성해주면 애러남
 	
 	List<Product> getAllProduct();
+	
+	
+	void insertProduct(Product product);
 
 }

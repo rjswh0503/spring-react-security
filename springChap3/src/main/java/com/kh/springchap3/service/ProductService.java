@@ -19,5 +19,17 @@ public class ProductService {
 	public List<Product> getAllProduct() {
 		return productMapper.getAllProduct();
 	}
+	
+	
+
+
+	public void addProduct(Product product) {
+		productMapper.insertProduct(product);
+	}
+	
+	
+	
+	
+	
 
 }

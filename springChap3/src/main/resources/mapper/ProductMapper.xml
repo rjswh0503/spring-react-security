@@ -4,5 +4,9 @@
 	<select id="getAllProduct" resultType="com.kh.springchap3.model.Product">
 		SELECT * FROM productss
 	</select>
+	<insert id="insertProduct" parameterType ="com.kh.springchap3.model.Product">
+		INSERT INTO productss(name,price)
+		VALUES(#{name},#{price})
+	</insert>
 </mapper>
 <!-- ProductMapper.xml -->
