@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="EUC-KR">
+		<title>MemberList</title>
+		<style>
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		th,
+		td {
+			border: 1px solid #dddddd;
+			text-align: left;
+			padding: 8px;
+		}
+
+		th {
+			background-color: #f2f2f2;
+		}
+	</style>
+	</head>
+	<body>
+		<h1>Member List</h1>
+		<table border="1">
+			<thead>
+				<tr>
+					<th>MemberID</th>
+					<th>닉네임</th>
+					<th>이름</th>
+					<th>이메일</th>
+					<th>가입 날짜</th>
+					<th>수정</th>
+					<th>삭제</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="member : ${members}">
+					<td th:text="${member.memberID}"></td>
+					<td th:text="${member.username}"></td>
+					<td th:text="${member.fullName}"></td>
+					<td th:text="${member.email}"></td>
+					<td th:text="${member.registrationDate}"></td>
+					
+					<td><a th:href="@{'/members/update?id=' + ${member.memberID}}"><button>수정하기</button></a></td>
+					<td><a th:href="@{'/members/delete?id=' + ${member.memberID}}"><button>삭제하기</button></a></td>
+					
+					
+				</tr>
+			</tbody>
+		</table>
+		
+	
+	</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="EUC-KR">
+	<title>Login Success</title>
+	</head>
+		<body>
+			<h2>Login Success</h2>
+			<p>환영합니다, <sapn th:text="${name}"></sapn>님! </p>
+			<p>환영합니다, <sapn th:text="${email}"></sapn>님! </p>
+			
+			<div th:if="${naverResponse}">
+			<h3>Naver Response!</h3>
+			<pre th:text="${naverResponse}"></pre>			
+			</div>
+			<p><a href="/">돌아가기</a></p>
+	
+		</body>
+</html>
